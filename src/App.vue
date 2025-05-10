@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between align-items-center px-4 mt-3">
       <h1 class="m-0">Tienda Online</h1>
       <button class="btn btn-outline-secondary" @click="showAdminPanel = !showAdminPanel">
-        <i class="bi bi-gear"></i> Admin
+        <i :class="showAdminPanel ? 'bi bi-x-circle' : 'bi bi-gear'"></i> Admin
       </button>
     </div>
 
