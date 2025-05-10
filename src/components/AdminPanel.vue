@@ -184,7 +184,7 @@
     props.setProducts(cleanProducts)
     props.setCategories(defaultData.categories)
   
-    alert('Tienda reseteada')
+    alert('La tienda ha sido reseteada correctamente.');
   }
   
   // Exportar tienda como archivo JSON
@@ -209,15 +209,44 @@
   const handleImportStore = (e) => {
     const file = e.target.files[0]
     if (!file) return
-  
+
+    const isValidCategory = (category) =>
+      typeof category.id === 'number' && typeof category.name === 'string';
+
+    const isValidProduct = (product) =>
+      typeof product.id === 'number' &&
+      typeof product.name === 'string' &&
+      typeof product.description === 'string' &&
+      typeof product.price === 'number' &&
+      typeof product.stock === 'number' &&
+      typeof product.categoryId === 'number' &&
+      Array.isArray(product.images) &&
+      product.images.every(image => typeof image === 'string');
+
     const reader = new FileReader()
     reader.onload = (event) => {
       try {
         const imported = JSON.parse(event.target.result)
   
         if (!imported.categories || !imported.products) {
-          alert('Estructura inválida')
-          return
+          alert('El archivo JSON no tiene la estructura esperada.');
+          // resetear el input de archivo
+          e.target.value = null;
+          return;
+        }
+
+        if (!imported.categories.every(isValidCategory)) {
+          alert('Algunas categorías no tienen el formato adecuado.');
+          // resetear el input de archivo
+          e.target.value = null;
+          return;
+        }
+
+        if (!imported.products.every(isValidProduct)) {
+          alert('Algunos productos no tienen el formato adecuado.');
+          // resetear el input de archivo
+          e.target.value = null;
+          return;
         }
   
         localStorage.setItem('categories', JSON.stringify(imported.categories))
@@ -226,9 +255,13 @@
         props.setCategories(imported.categories)
         props.setProducts(imported.products)
   
-        alert('Importación exitosa')
+        alert('Tienda importada correctamente.');
       } catch (err) {
         alert('Error al leer el archivo JSON')
+        console.error(err);
+      } finally {
+        // resetear el input de archivo
+        e.target.value = null;
       }
     }
   
