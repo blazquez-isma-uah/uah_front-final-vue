@@ -9,7 +9,7 @@
       />
   
       <!-- Nombre y subtotal -->
-      <span>
+      <span class="text-center w-100">
         <strong>{{ item.name }}</strong> (x{{ item.quantity }}) – ${{ item.price * item.quantity }}
       </span>
   

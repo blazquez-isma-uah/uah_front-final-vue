@@ -23,7 +23,7 @@
         </div>
   
         <!-- Información del producto -->
-        <div class="card-body d-flex flex-column">
+        <div class="card-body d-flex flex-column text-center">
           <h5 class="card-title">{{ product.name }}</h5>
           <p class="text-muted">Código: <strong>{{ product.id }}</strong></p>
           <p class="card-text">{{ product.description }}</p>

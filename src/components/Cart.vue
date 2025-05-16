@@ -1,9 +1,9 @@
 <template>
     <div id="cart-section">
-      <h2>Cesta de la Compra</h2>
+      <h2 class="text-center">Cesta de la Compra</h2>
   
       <!-- Lista de productos en el carrito -->
-      <ul id="cart-list" class="list-group">
+      <ul id="cart-list " class="list-group">
         <CartProduct
           v-for="item in cart"
           :key="item.id"
@@ -14,18 +14,18 @@
       </ul>
   
       <!-- Total general -->
-      <div class="mt-3">
+      <div class="mt-3 text-center">
         <strong>Total: <span id="cart-total"> ${{ total }}</span></strong>
       </div>
   
       <!-- Botón para realizar pedido -->
-      <button
-        id="checkout-button"
-        class="btn btn-success mt-3"
-        @click="$emit('checkout')"
-      >
-        Realizar Pedido
-      </button>
+        <button
+            id="checkout-button"
+            class="btn btn-success mt-3 d-block mx-auto"
+            @click="$emit('checkout')"
+        >
+            Realizar Pedido
+        </button>
     </div>
   </template>
   

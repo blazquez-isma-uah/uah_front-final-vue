@@ -8,7 +8,7 @@
       >
         <!-- Título de la categoría con botón de colapsar/expandir -->
         <h3
-          class="category-title bg-light p-2 rounded border mb-3"
+          class="category-title text-center bg-light p-2 rounded border mb-3"
           @click="toggleCategory(category.id)"
         >
           {{ category.name }}

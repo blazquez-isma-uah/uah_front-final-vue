@@ -1,5 +1,5 @@
 <template>
-    <div class="card p-4 mt-4">
+    <div class="card p-4 mt-4 text-center">
       <!-- Vista para introducir la contraseña -->
       <template v-if="!isAdmin">
         <h4>Acceso de Administrador</h4>
@@ -18,10 +18,10 @@
   
         <!-- Botones de utilidad -->
         <div class="d-flex justify-content-center align-items-center px-4 m-3">
-          <button class="btn btn-danger me-3" @click="handleResetStore">Resetear Tienda</button>
-          <button class="btn btn-success me-3" @click="handleExportStore">Exportar Tienda</button>
+          <button class="btn btn-danger me-3" @click="handleResetStore"><i className="bi bi-arrow-clockwise"></i> Resetear Tienda</button>
+          <button class="btn btn-success me-3" @click="handleExportStore"><i className="bi bi-file-earmark-arrow-down"></i> Exportar Tienda</button>
           <div class="custom-file-upload">
-            <label for="fileInput" class="btn btn-primary">Importar Tienda (.json)</label>
+            <label for="fileInput" class="btn btn-primary"><i class="bi bi-file-earmark-arrow-up"></i> Importar Tienda (.json)</label>
             <input
               id="fileInput"
               type="file"
