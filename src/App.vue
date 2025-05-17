@@ -51,7 +51,7 @@
 <script setup>
 import './assets/styles.css';
 import { ref, onMounted } from 'vue'
-import data from './data/tienda_exportada.json'
+import data from './data/data.json'
 
 // Importar componentes
 import ProductList from './components/ProductList.vue'
