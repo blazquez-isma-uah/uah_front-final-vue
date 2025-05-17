@@ -1,5 +1,47 @@
-# Vue 3 + Vite
+# Proyecto Tienda Online - Versión Vue
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Este proyecto es una tienda online desarrollada con Vue como parte del trabajo final de la asignatura **Frameworks Frontend**.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Requisitos previos
+
+- Tener instalado **Node.js** (incluye `npm`)
+- Tener conexión a internet para instalar dependencias
+
+Comprueba si tienes Node.js ejecutando:
+
+```bash
+node -v
+npm -v
+```
+
+## Puesta en marcha
+
+1. Clona este repositorio:
+
+```bash
+git clone https://github.com/usuario/tienda-vue.git
+cd tienda-vue
+```
+
+2. Instala las dependencias:
+
+```bash
+npm install
+```
+
+3. Inicia la aplicación:
+
+```bash
+npm run dev
+```
+
+La app se abrirá en tu navegador, normalmente en `http://localhost:5173`.
+
+## Estructura básica
+
+- `src/`: Código fuente
+- `components/`: Componentes (producto, carrito, admin, etc.)
+- `data/`: Datos iniciales
+- `public/img/`: Imágenes de los productos
+
+---
